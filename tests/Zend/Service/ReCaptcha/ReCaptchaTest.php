@@ -26,9 +26,6 @@ require_once 'Zend/Service/ReCaptcha.php';
 /** @see Zend_Http_Client_Adapter_Test */
 require_once 'Zend/Http/Client/Adapter/Test.php';
 
-/** @see Zend_Config */
-require_once 'Zend/Config.php';
-
 /**
  * @category   Zend
  * @package    Zend_Service_ReCaptcha
