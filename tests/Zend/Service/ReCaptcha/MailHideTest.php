@@ -20,8 +20,6 @@
  * @version    $Id$
  */
 
-/** @see Zend_Service_ReCaptcha_MailHide */
-require_once 'Zend/Service/ReCaptcha/MailHide.php';
 
 /**
  * @category   Zend
