@@ -14,8 +14,8 @@
         "php": ">=7.0.0",
         "diablomedia/zendframework1-config": "^1.0.0",
         "diablomedia/zendframework1-json": "^1.0.0",
-        "diablomedia/zendframework1-http": "*",
-        "diablomedia/zendframework1-service": "*",
+        "diablomedia/zendframework1-http": "^1.0.0",
+        "diablomedia/zendframework1-service": "^1.0.0",
         "diablomedia/zendframework1-validate": "^1.0.0"
     },
     "autoload": {
