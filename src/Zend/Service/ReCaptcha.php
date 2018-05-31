@@ -79,7 +79,7 @@ class Zend_Service_ReCaptcha extends Zend_Service_Abstract
      * @var array
      */
     protected $_params = array(
-        'ssl' => false, /* Use SSL or not when generating the recaptcha */
+        'ssl'   => false, /* Use SSL or not when generating the recaptcha */
         'error' => null, /* The error message to display in the recaptcha */
         'xhtml' => false /* Enable XHTML output (this will not be XHTML Strict
                             compliant since the IFRAME is necessary when
@@ -116,9 +116,13 @@ class Zend_Service_ReCaptcha extends Zend_Service_Abstract
      * @param string $ip
      * @param array|Zend_Config $params
      */
-    public function __construct($publicKey = null, $privateKey = null,
-                                $params = null, $options = null, $ip = null)
-    {
+    public function __construct(
+        $publicKey = null,
+        $privateKey = null,
+        $params = null,
+        $options = null,
+        $ip = null
+    ) {
         if ($publicKey !== null) {
             $this->setPublicKey($publicKey);
         }
@@ -129,7 +133,7 @@ class Zend_Service_ReCaptcha extends Zend_Service_Abstract
 
         if ($ip !== null) {
             $this->setIp($ip);
-        } else if (isset($_SERVER['REMOTE_ADDR'])) {
+        } elseif (isset($_SERVER['REMOTE_ADDR'])) {
             $this->setIp($_SERVER['REMOTE_ADDR']);
         }
 
@@ -218,7 +222,6 @@ class Zend_Service_ReCaptcha extends Zend_Service_Abstract
                 $this->setParam($k, $v);
             }
         } else {
-
             throw new Zend_Service_ReCaptcha_Exception(
                 'Expected array or Zend_Config object'
             );
@@ -280,7 +283,6 @@ class Zend_Service_ReCaptcha extends Zend_Service_Abstract
                 $this->setOption($k, $v);
             }
         } else {
-
             throw new Zend_Service_ReCaptcha_Exception(
                 'Expected array or Zend_Config object'
             );
@@ -368,7 +370,6 @@ class Zend_Service_ReCaptcha extends Zend_Service_Abstract
     public function getHtml($name = null)
     {
         if ($this->_publicKey === null) {
-
             throw new Zend_Service_ReCaptcha_Exception('Missing public key');
         }
 
@@ -378,11 +379,11 @@ class Zend_Service_ReCaptcha extends Zend_Service_Abstract
             $host = self::API_SECURE_SERVER;
         }
 
-        $htmlBreak = '<br>';
+        $htmlBreak        = '<br>';
         $htmlInputClosing = '>';
 
         if ((bool) $this->_params['xhtml'] === true) {
-            $htmlBreak = '<br />';
+            $htmlBreak        = '<br />';
             $htmlInputClosing = '/>';
         }
 
@@ -395,7 +396,7 @@ class Zend_Service_ReCaptcha extends Zend_Service_Abstract
         $reCaptchaOptions = '';
 
         if (!empty($this->_options)) {
-            $encoded = Zend_Json::encode($this->_options);
+            $encoded          = Zend_Json::encode($this->_options);
             $reCaptchaOptions = <<<SCRIPT
 <script type="text/javascript">
     var RecaptchaOptions = {$encoded};
@@ -440,12 +441,10 @@ HTML;
     protected function _post($challengeField, $responseField)
     {
         if ($this->_privateKey === null) {
-
             throw new Zend_Service_ReCaptcha_Exception('Missing private key');
         }
 
         if ($this->_ip === null) {
-
             throw new Zend_Service_ReCaptcha_Exception('Missing ip address');
         }
 

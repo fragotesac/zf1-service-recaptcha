@@ -34,10 +34,10 @@ class Zend_Service_ReCaptcha_MailHide extends Zend_Service_ReCaptcha
     /**#@+
      * Encryption constants
      */
-    const ENCRYPTION_MODE = MCRYPT_MODE_CBC;
-    const ENCRYPTION_CIPHER = MCRYPT_RIJNDAEL_128;
+    const ENCRYPTION_MODE       = MCRYPT_MODE_CBC;
+    const ENCRYPTION_CIPHER     = MCRYPT_RIJNDAEL_128;
     const ENCRYPTION_BLOCK_SIZE = 16;
-    const ENCRYPTION_IV = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+    const ENCRYPTION_IV         = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
     /**#@-*/
 
     /**
@@ -147,7 +147,6 @@ class Zend_Service_ReCaptcha_MailHide extends Zend_Service_ReCaptcha
     protected function _requireMcrypt()
     {
         if (!extension_loaded('mcrypt')) {
-
             throw new Zend_Service_ReCaptcha_MailHide_Exception('Use of the Zend_Service_ReCaptcha_MailHide component requires the mcrypt extension to be enabled in PHP');
         }
     }
@@ -228,13 +227,13 @@ class Zend_Service_ReCaptcha_MailHide extends Zend_Service_ReCaptcha
         /* Decide on how much of the local part we want to reveal */
         if (strlen($emailParts[0]) <= 4) {
             $emailParts[0] = substr($emailParts[0], 0, 1);
-        } else if (strlen($emailParts[0]) <= 6) {
+        } elseif (strlen($emailParts[0]) <= 6) {
             $emailParts[0] = substr($emailParts[0], 0, 3);
         } else {
             $emailParts[0] = substr($emailParts[0], 0, 4);
         }
 
-        $this->_emailLocalPart = $emailParts[0];
+        $this->_emailLocalPart  = $emailParts[0];
         $this->_emailDomainPart = $emailParts[1];
 
         return $this;

@@ -143,7 +143,7 @@ class Zend_Service_ReCaptcha_Response
         $body = $response->getBody();
 
         // Default status and error code
-        $status = 'false';
+        $status    = 'false';
         $errorCode = '';
 
         $parts = explode("\n", $body);

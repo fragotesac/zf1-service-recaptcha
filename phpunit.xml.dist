@@ -14,6 +14,11 @@
         <const name="TESTS_ZEND_SERVICE_RECAPTCHA_MAILHIDE_PUBLIC_KEY" value="public mailhide key" />
         <const name="TESTS_ZEND_SERVICE_RECAPTCHA_MAILHIDE_PRIVATE_KEY" value="private mailhide key" />
     </php>
+    <testsuites>
+        <testsuite name="default">
+            <directory>./tests</directory>
+        </testsuite>
+    </testsuites>
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./src</directory>
