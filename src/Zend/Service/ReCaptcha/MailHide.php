@@ -323,10 +323,10 @@ class Zend_Service_ReCaptcha_MailHide extends Zend_Service_ReCaptcha
     protected function _getUrl()
     {
         /* Figure out how much we need to pad the email */
-        $numPad = self::ENCRYPTION_BLOCK_SIZE - (strlen($this->_email) % self::ENCRYPTION_BLOCK_SIZE);
+        $numPad = self::ENCRYPTION_BLOCK_SIZE - (strlen((string) $this->_email) % self::ENCRYPTION_BLOCK_SIZE);
 
         /* Pad the email */
-        $emailPadded = str_pad($this->_email, strlen($this->_email) + $numPad, chr($numPad));
+        $emailPadded = str_pad((string) $this->_email, strlen((string) $this->_email) + $numPad, chr($numPad));
 
         /* Encrypt the email */
         $emailEncrypted = mcrypt_encrypt(self::ENCRYPTION_CIPHER, $this->_privateKeyPacked, $emailPadded, self::ENCRYPTION_MODE, self::ENCRYPTION_IV);
