@@ -143,6 +143,7 @@ class Zend_Service_ReCaptcha_MailHide extends Zend_Service_ReCaptcha
      * See if the mcrypt extension is available
      *
      * @throws Zend_Service_ReCaptcha_MailHide_Exception
+     * @return void
      */
     protected function _requireMcrypt()
     {
