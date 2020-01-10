@@ -10,7 +10,7 @@
     "license": "BSD-3-Clause",
     "require": {
         "php": ">=7.0.0",
-        "diablomedia/zendframework1-config": "^1.0.0",
+        "diablomedia/zendframework1-config": "^1.0.0 || ^2.0.0",
         "diablomedia/zendframework1-json": "^1.0.0",
         "diablomedia/zendframework1-http": "^1.0.0",
         "diablomedia/zendframework1-service": "^1.0.0",
