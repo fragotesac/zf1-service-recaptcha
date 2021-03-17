@@ -36,7 +36,7 @@ class Zend_Service_ReCaptcha_ReCaptchaTest extends PHPUnit\Framework\TestCase
     protected $_privateKey = TESTS_ZEND_SERVICE_RECAPTCHA_PRIVATE_KEY;
     protected $_reCaptcha  = null;
 
-    public function setUp()
+    public function setUp(): void
     {
         if (!(defined('TESTS_ZEND_SERVICE_RECAPTCHA_ENABLED') &&
             constant('TESTS_ZEND_SERVICE_RECAPTCHA_ENABLED') &&
@@ -263,8 +263,8 @@ class Zend_Service_ReCaptcha_ReCaptchaTest extends PHPUnit\Framework\TestCase
     {
         $this->_reCaptcha->setPublicKey($this->_publicKey);
         $html = $this->_reCaptcha->getHtml('contact');
-        $this->assertContains('contact[recaptcha_challenge_field]', $html);
-        $this->assertContains('contact[recaptcha_response_field]', $html);
+        $this->assertStringContainsString('contact[recaptcha_challenge_field]', $html);
+        $this->assertStringContainsString('contact[recaptcha_response_field]', $html);
     }
 
     public function testVerifyWithMissingPrivateKey()

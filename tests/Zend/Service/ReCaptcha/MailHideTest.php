@@ -36,7 +36,7 @@ class Zend_Service_ReCaptcha_MailHideTest extends PHPUnit\Framework\TestCase
     protected $_privateKey = TESTS_ZEND_SERVICE_RECAPTCHA_MAILHIDE_PRIVATE_KEY;
     protected $_mailHide   = null;
 
-    public function setUp()
+    public function setUp(): void
     {
         if (!(defined('TESTS_ZEND_SERVICE_RECAPTCHA_ENABLED') &&
             constant('TESTS_ZEND_SERVICE_RECAPTCHA_ENABLED') &&

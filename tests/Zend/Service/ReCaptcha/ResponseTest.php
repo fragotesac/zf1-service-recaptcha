@@ -34,7 +34,7 @@ class Zend_Service_ReCaptcha_ResponseTest extends PHPUnit\Framework\TestCase
 {
     protected $_response = null;
 
-    public function setUp()
+    public function setUp(): void
     {
         if (!(defined('TESTS_ZEND_SERVICE_RECAPTCHA_ENABLED') &&
             constant('TESTS_ZEND_SERVICE_RECAPTCHA_ENABLED') &&

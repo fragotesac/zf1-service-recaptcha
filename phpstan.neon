@@ -6,7 +6,6 @@ parameters:
     excludes_analyse:
         - %rootDir%/../../../vendor/*
         - %rootDir%/../../../tests/*
-    bootstrap: %rootDir%/../../../phpstan-bootstrap.php
     ignoreErrors:
         -
             message: '#Else branch is unreachable because previous condition is always true\.#'
