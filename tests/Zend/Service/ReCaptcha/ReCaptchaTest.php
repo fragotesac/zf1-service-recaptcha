@@ -237,7 +237,7 @@ class Zend_Service_ReCaptcha_ReCaptchaTest extends PHPUnit\Framework\TestCase
         $this->assertNotSame('example.com', $client->getHeader('host'));
 
         // See if we have a valid object and that the status is false
-        $this->assertTrue($resp instanceof Zend_Service_ReCaptcha_Response);
+        $this->assertInstanceOf(Zend_Service_ReCaptcha_Response::class, $resp);
         $this->assertFalse($resp->getStatus());
     }
 

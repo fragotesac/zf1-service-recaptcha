@@ -9,4 +9,8 @@ parameters:
     ignoreErrors:
         -
             message: '#Else branch is unreachable because previous condition is always true\.#'
-            path: %currentWorkingDirectory%/src/Zend/Service/ReCaptcha.php
+            path: ./src/Zend/Service/ReCaptcha.php
+        -
+            message: '#Function mcrypt_encrypt not found\.#'
+            path: ./src/Zend/Service/ReCaptcha/MailHide.php
+            count: 1
