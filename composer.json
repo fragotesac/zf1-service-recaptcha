@@ -1,5 +1,5 @@
 {
-    "name": "diablomedia/zendframework1-service-recaptcha",
+    "name": "fragotesac/zf1-service-recaptcha",
     "description": "Zend Framework 1 Service_Recaptcha component",
     "type": "library",
     "keywords": [
